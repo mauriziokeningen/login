@@ -6,12 +6,16 @@ const EmployeeModel = require('./models/Employee')
 const app = express()
 app.use(express.json())
 app.use(cors(
-    origin: {},
+    origin: {"login-partedelservidor.vercel.app"},
     methods: {"POST", "GET"},
     credentials: true
 ));
 
 mongoose.connect("mongodb+srv://coronareyesmauricio20:HolaMundo@cluster0.wpvqzep.mongodb.net/employee")
+
+app.get("/", (req, res)=>{
+res.json("Hello");
+})
 
 app.post("/login", (req, res) => {
     const { email, password } = req.body; // Use '=' instead of ':'
