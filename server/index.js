@@ -5,7 +5,11 @@ const EmployeeModel = require('./models/Employee')
 
 const app = express()
 app.use(express.json())
-app.use(cors())
+app.use(cors(
+    origin: {},
+    methods: {"POST", "GET"},
+    credentials: true
+));
 
 mongoose.connect("mongodb+srv://coronareyesmauricio20:HolaMundo@cluster0.wpvqzep.mongodb.net/employee")
 
