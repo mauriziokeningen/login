@@ -4,7 +4,7 @@ import axios from 'axios'
 import { useNavigate } from "react-router-dom";
 
 
-function Signup() {
+function Login() {
 
     const [name, setName] = useState()
     const [email, setEmail] = useState()
@@ -67,4 +67,4 @@ function Signup() {
   );
 }
 
-export default Signup;
+export default Login;
